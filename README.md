@@ -1,7 +1,7 @@
 # Overview
 
 {Provide a description of your software}
-
+This application will help students to choose what class modules they can pick
 {Describe your purpose for creating this software.}
 
 {Provide a link to your YouTube demonstration. It should be a one minute demo of the software running and a walkthrough of the code.}
