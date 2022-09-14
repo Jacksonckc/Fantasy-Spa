@@ -1,26 +1,26 @@
 # Overview
 
-{Provide a description of your software}
+Description:
 This application will help students to choose what class modules they can pick
-{Describe your purpose for creating this software.}
 
-{Provide a link to your YouTube demonstration. It should be a one minute demo of the software running and a walkthrough of the code.}
+Why Perfectly Beautiful?
+Perfectly Beautiful is designed to better serve clients and users. The web app consists of our service menu, prices, reviews, and etc.
+The application also provides the clients to make comments, review, and feedback for the improvement of our company.
+Clients can share their personal experiences with Perfectly Beautiful and even upload pictures on our 'Beauty overflow' channel with other app users.
 
 [Software Demo Video](http://youtube.link.goes.here)
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
-Angular (Web App), Firebase cloud database,
+Tools:
+Angular (Web App), Firebase cloud database, bootstrap,
 
-{Describe the programming language that you used}
+Programming languages:
 This web application uses typescript which is the default langauge of Angular frontend framework.
 
 The web application will use backend/database supported by Firebase for authentication and handling queries.
 
 # Useful Websites
-
-{Make a list of websites that you found helpful in this project}
 
 - [Web Site Name](http://url.link.goes.here)
 - [Web Site Name](http://url.link.goes.here)
