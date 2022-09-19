@@ -1,7 +1,7 @@
 # Overview
 
 Description:
-This application will help students to choose what class modules they can pick
+This application will help clients to access our services and products.
 
 Why Perfectly Beautiful?
 Perfectly Beautiful is designed to better serve clients and users. The web app consists of our service menu, prices, reviews, and etc.
