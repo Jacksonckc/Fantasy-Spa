@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+:root {
+  --navbar_height: 10vh;
+  --ratio: 1.5;
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+}
+
+.app_container {
+  & > * {
+    height: 100vh;
+    padding-top: var(--navbar_height);
+  }
+}
+
+.navbar {
+  height: var(--navbar_height);
+  padding-top: 0;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  background-color: aliceblue;
+  line-height: var(--navbar_height);
+  text-align: center;
+
+  .navbar-toggle_button {
+    z-index: 1;
+    position: absolute;
+    left: var(--s-2);
+    top: 50%;
+    transform: translateY(-50%);
+    padding: var(--s-1);
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    transition: all 0.3s;
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      border-radius: 50%;
+      z-index: -2;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: darken(white, 25%);
+      transition: all 0.3s;
+      border-radius: 50%;
+      z-index: -1;
+    }
+    &:hover {
+      color: #fff;
+      &:before {
+        width: 100%;
+      }
+    }
+    .bar1,
+    .bar2,
+    .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: #333;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+    .bar1on {
+      transform: translate(0, 11px) rotate(-45deg);
+    }
+    .bar2on {
+      opacity: 0;
+    }
+    .bar3on {
+      transform: translate(0, -11px) rotate(45deg);
+    }
+  }
+
+  .navbar-ul {
+    height: 100vh;
+    width: 100vw;
+    background: url(../public/img.webp);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: var(--s3);
+    justify-content: space-around;
+    .navbar-li {
+      text-decoration: none;
+      padding: var(--s3);
+      margin: var(--s1);
+      color: white;
+      font-weight: 700;
+      &:hover {
+        transition: 1s;
+        backdrop-filter: invert(90%);
+        border-radius: 15% 50% 50% 30%;
+        color: black;
+      }
+    }
+  }
+}
