@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+// Variables
 :root {
   --navbar_height: 10vh;
   --ratio: 1.5;
@@ -21,112 +22,127 @@
   --s5: calc(var(--s4) * var(--ratio));
 }
 
-.app_container {
+// Entire app
+.app {
   & > * {
     height: 100vh;
     padding-top: var(--navbar_height);
   }
-}
 
-.navbar {
-  height: var(--navbar_height);
-  padding-top: 0;
-  position: fixed;
-  width: 100vw;
-  top: 0;
-  background-color: aliceblue;
-  line-height: var(--navbar_height);
-  text-align: center;
-
-  .navbar-toggle_button {
-    z-index: 1;
-    position: absolute;
-    left: var(--s-2);
-    top: 50%;
-    transform: translateY(-50%);
-    padding: var(--s-1);
-    border-radius: 10rem;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 1rem;
-    letter-spacing: 0.15rem;
-    transition: all 0.3s;
-    overflow: hidden;
-
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: white;
-      border-radius: 50%;
-      z-index: -2;
-    }
-    &:before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0%;
-      height: 100%;
-      background-color: darken(white, 25%);
-      transition: all 0.3s;
-      border-radius: 50%;
-      z-index: -1;
-    }
-    &:hover {
-      color: #fff;
-      &:before {
-        width: 100%;
-      }
-    }
-    .bar1,
-    .bar2,
-    .bar3 {
-      width: 35px;
-      height: 5px;
-      background-color: #333;
-      margin: 6px 0;
-      transition: 0.4s;
-    }
-    .bar1on {
-      transform: translate(0, 11px) rotate(-45deg);
-    }
-    .bar2on {
-      opacity: 0;
-    }
-    .bar3on {
-      transform: translate(0, -11px) rotate(45deg);
-    }
-  }
-
-  .navbar-ul {
-    height: 100vh;
+  // Header component
+  .header {
+    height: var(--navbar_height);
+    padding-top: 0;
+    position: fixed;
     width: 100vw;
-    background: url(../public/img.webp);
-    background-size: cover;
-    background-position: center;
-    position: absolute;
     top: 0;
-    display: flex;
-    flex-direction: column;
+    background-color: aliceblue;
+    line-height: var(--navbar_height);
     text-align: center;
-    font-size: var(--s3);
-    justify-content: space-around;
-    .navbar-li {
-      text-decoration: none;
-      padding: var(--s3);
-      margin: var(--s1);
+
+    .header-toggle_button {
+      cursor: pointer;
+      z-index: 2;
+      position: absolute;
+      left: var(--s-2);
+      top: 50%;
+      transform: translateY(-50%);
+      padding: var(--s-1);
+      border-radius: 50%;
       color: white;
-      font-weight: 700;
-      &:hover {
-        transition: 1s;
-        backdrop-filter: invert(90%);
-        border-radius: 15% 50% 50% 30%;
-        color: black;
+      transition: all 0.3s;
+      overflow: hidden;
+      .bar1,
+      .bar2,
+      .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 0.4s;
       }
+
+      // Animation on button
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        border-radius: 50%;
+        z-index: -2;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: darken(white, 25%);
+        transition: all 0.3s;
+        border-radius: 50%;
+        z-index: -1;
+      }
+      &:hover {
+        color: white;
+        &:before {
+          width: 100%;
+        }
+      }
+      .bar1on {
+        transform: translate(0, 11px) rotate(-45deg);
+      }
+      .bar2on {
+        opacity: 0;
+      }
+      .bar3on {
+        transform: translate(0, -11px) rotate(45deg);
+      }
+    }
+
+    // Menu list
+    .header-ul {
+      z-index: 1;
+      height: 100vh;
+      width: 100vw;
+      background: url(../public/img.webp);
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-size: var(--s3);
+      justify-content: space-around;
+      .header-li {
+        text-decoration: none;
+        padding: var(--s3);
+        margin: var(--s1);
+        color: white;
+        font-weight: 700;
+        &:hover {
+          transition: 1s;
+          backdrop-filter: invert(90%);
+          border-radius: 15% 50% 50% 30%;
+          color: black;
+        }
+      }
+    }
+
+    // Profile image particle
+    .profile_img {
+      width: var(--navbar_height);
+      padding: var(--s0);
+      right: var(--s-2);
+      top: 0;
+      aspect-ratio: 1/ 1;
+      position: absolute;
+      border-radius: 50%;
+      cursor: pointer;
     }
   }
 }

@@ -21,12 +21,11 @@
   --s5: calc(var(--s4) * var(--ratio));
 }
 
-.app_container > * {
+.app > * {
   height: 100vh;
   padding-top: var(--navbar_height);
 }
-
-.navbar {
+.app .header {
   height: var(--navbar_height);
   padding-top: 0;
   position: fixed;
@@ -36,22 +35,29 @@
   line-height: var(--navbar_height);
   text-align: center;
 }
-.navbar .navbar-toggle_button {
-  z-index: 1;
+.app .header .header-toggle_button {
+  cursor: pointer;
+  z-index: 2;
   position: absolute;
   left: var(--s-2);
   top: 50%;
   transform: translateY(-50%);
   padding: var(--s-1);
-  border-radius: 10rem;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 1rem;
-  letter-spacing: 0.15rem;
+  border-radius: 50%;
+  color: white;
   transition: all 0.3s;
   overflow: hidden;
 }
-.navbar .navbar-toggle_button:after {
+.app .header .header-toggle_button .bar1,
+.app .header .header-toggle_button .bar2,
+.app .header .header-toggle_button .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+.app .header .header-toggle_button:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -62,7 +68,7 @@
   border-radius: 50%;
   z-index: -2;
 }
-.navbar .navbar-toggle_button:before {
+.app .header .header-toggle_button:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -74,31 +80,23 @@
   border-radius: 50%;
   z-index: -1;
 }
-.navbar .navbar-toggle_button:hover {
-  color: #fff;
+.app .header .header-toggle_button:hover {
+  color: white;
 }
-.navbar .navbar-toggle_button:hover:before {
+.app .header .header-toggle_button:hover:before {
   width: 100%;
 }
-.navbar .navbar-toggle_button .bar1,
-.navbar .navbar-toggle_button .bar2,
-.navbar .navbar-toggle_button .bar3 {
-  width: 35px;
-  height: 5px;
-  background-color: #333;
-  margin: 6px 0;
-  transition: 0.4s;
-}
-.navbar .navbar-toggle_button .bar1on {
+.app .header .header-toggle_button .bar1on {
   transform: translate(0, 11px) rotate(-45deg);
 }
-.navbar .navbar-toggle_button .bar2on {
+.app .header .header-toggle_button .bar2on {
   opacity: 0;
 }
-.navbar .navbar-toggle_button .bar3on {
+.app .header .header-toggle_button .bar3on {
   transform: translate(0, -11px) rotate(45deg);
 }
-.navbar .navbar-ul {
+.app .header .header-ul {
+  z-index: 1;
   height: 100vh;
   width: 100vw;
   background: url(../public/img.webp);
@@ -112,17 +110,27 @@
   font-size: var(--s3);
   justify-content: space-around;
 }
-.navbar .navbar-ul .navbar-li {
+.app .header .header-ul .header-li {
   text-decoration: none;
   padding: var(--s3);
   margin: var(--s1);
   color: white;
   font-weight: 700;
 }
-.navbar .navbar-ul .navbar-li:hover {
+.app .header .header-ul .header-li:hover {
   transition: 1s;
   -webkit-backdrop-filter: invert(90%);
           backdrop-filter: invert(90%);
   border-radius: 15% 50% 50% 30%;
   color: black;
+}
+.app .header .profile_img {
+  width: var(--navbar_height);
+  padding: var(--s0);
+  right: var(--s-2);
+  top: 0;
+  aspect-ratio: 1/1;
+  position: absolute;
+  border-radius: 50%;
+  cursor: pointer;
 }/*# sourceMappingURL=index.css.map */
