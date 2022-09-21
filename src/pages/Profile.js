@@ -11,7 +11,7 @@ import {
 
 const Profile = () => {
   const [newName, setNewName] = useState('');
-  const [newMajor, setNewMajor] = useState('');
+  const [newService, setNewService] = useState('');
   const [newAge, setNewAge] = useState(0);
   const [users, setUsers] = useState([]);
   const usersCollectionRef = collection(db, 'users');
@@ -26,7 +26,7 @@ const Profile = () => {
   const createUser = async () => {
     await addDoc(usersCollectionRef, {
       name: newName,
-      major: newMajor,
+      service: newService,
       age: Number(newAge),
     });
   };
@@ -51,9 +51,9 @@ const Profile = () => {
         }}
       ></input>
       <input
-        placeholder='Major: '
+        placeholder='Service: '
         onChange={(event) => {
-          setNewMajor(event.target.value);
+          setNewService(event.target.value);
         }}
       ></input>
       <input
@@ -69,7 +69,7 @@ const Profile = () => {
         return (
           <div key={user.id}>
             <h1>Name: {user.name}</h1>
-            <h1>Major: {user.major}</h1>
+            <h1>Service: {user.service}</h1>
             <h1>Age: {user.age}</h1>
             <button
               onClick={() => {

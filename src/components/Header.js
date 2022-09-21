@@ -15,7 +15,7 @@ const Header = () => {
         <div className={`bar2 ${toggle && 'bar2on'}`}></div>
         <div className={`bar3 ${toggle && 'bar3on'}`}></div>
       </div>
-      <h1 className='header-brand_name'>Perfectly Beautiful</h1>
+      <h1 className='header-brand_name'>Fantasy Spa</h1>
 
       {toggle && (
         <div className='header-ul'>

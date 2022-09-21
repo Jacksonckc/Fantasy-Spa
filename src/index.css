@@ -22,8 +22,8 @@
 }
 
 .app > * {
-  height: 100vh;
-  padding-top: var(--navbar_height);
+  height: 150vh;
+  padding: calc(var(--navbar_height) + 20px) 10px 0 10px;
 }
 .app .header {
   height: var(--navbar_height);
@@ -32,8 +32,11 @@
   width: 100vw;
   top: 0;
   background-color: aliceblue;
+  background-position: center;
+  background-size: cover;
   line-height: var(--navbar_height);
   text-align: center;
+  box-shadow: 0px 5px 10px rgb(150, 179, 186);
 }
 .app .header .header-toggle_button {
   cursor: pointer;
@@ -42,11 +45,17 @@
   left: var(--s-2);
   top: 50%;
   transform: translateY(-50%);
-  padding: var(--s-1);
+  padding: var(--s-2);
   border-radius: 50%;
   color: white;
   transition: all 0.3s;
   overflow: hidden;
+  aspect-ratio: 1/1;
+}
+@media (min-width: 480px) {
+  .app .header .header-toggle_button {
+    padding: var(--s0);
+  }
 }
 .app .header .header-toggle_button .bar1,
 .app .header .header-toggle_button .bar2,
@@ -54,7 +63,7 @@
   width: 35px;
   height: 5px;
   background-color: #333;
-  margin: 6px 0;
+  margin: 5px 0;
   transition: 0.4s;
 }
 .app .header .header-toggle_button:after {
@@ -95,6 +104,32 @@
 .app .header .header-toggle_button .bar3on {
   transform: translate(0, -11px) rotate(45deg);
 }
+.app .header .header-brand_name {
+  font-size: var(--s1);
+  background-image: linear-gradient(-225deg, #89cbff 0%, #846a50 15%, #89cbff 35%, #846a50 50%, #89cbff 65%, #846a50 80%, #89cbff 100%);
+  background-size: 200%;
+  color: black;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: textclip 3s linear infinite;
+          animation: textclip 3s linear infinite;
+}
+@-webkit-keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+@media (min-width: 480px) {
+  .app .header .header-brand_name {
+    font-size: var(--s2);
+  }
+}
 .app .header .header-ul {
   z-index: 1;
   height: 100vh;
@@ -104,29 +139,38 @@
   background-position: center;
   position: absolute;
   top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   text-align: center;
   font-size: var(--s3);
   justify-content: space-around;
-  transform: translateY(-100vh);
-  -webkit-animation: dropDown 1s forwards;
-          animation: dropDown 1s forwards;
+  transform: translate(-100vw, -100vh);
+  -webkit-animation: dropDown 1s forwards ease-in-out;
+          animation: dropDown 1s forwards ease-in-out;
+  box-shadow: 30px 70px 80px black;
+  border-radius: 15px 60%;
+  overflow: hidden;
+}
+.app .header .header-ul::after {
+  content: "";
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  background-color: #333;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 @-webkit-keyframes dropDown {
-  from {
-    top: 0px;
-  }
   to {
-    top: 100vh;
+    transform: translate(0, 0);
   }
 }
 @keyframes dropDown {
-  from {
-    top: 0px;
-  }
   to {
-    top: 100vh;
+    transform: translate(0, 0);
   }
 }
 .app .header .header-ul .header-li {
@@ -140,13 +184,13 @@
   transition: 1s;
   -webkit-backdrop-filter: invert(90%);
           backdrop-filter: invert(90%);
-  border-radius: 15% 50% 50% 30%;
+  border-radius: 15% 50% 50% 60%;
   color: black;
 }
 .app .header .profile_img {
   width: var(--navbar_height);
-  padding: var(--s0);
-  right: var(--s-2);
+  padding: 10px;
+  right: 0;
   top: 0;
   aspect-ratio: 1/1;
   position: absolute;
