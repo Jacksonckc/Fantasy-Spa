@@ -21,7 +21,7 @@ const Profile = () => {
       setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
     getUsers();
-  }, []);
+  }, [users]);
 
   const createUser = async () => {
     await addDoc(usersCollectionRef, {

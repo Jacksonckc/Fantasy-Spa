@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { ProfileImg } from '../particles';
+import { ProfileImg, ToggleButton } from '../particles';
 const Header = () => {
   const [toggle, setToggle] = useState(false);
+
   const changeToggleState = () => {
     setToggle(!toggle);
   };
 
+  const toggleButtonProps = {
+    toggle,
+    changeToggleState,
+  };
+
   return (
     <nav className='header'>
-      <div className='header-toggle_button' onClick={changeToggleState}>
-        <div className={`bar1 ${toggle && 'bar1on'}`}></div>
-        <div className={`bar2 ${toggle && 'bar2on'}`}></div>
-        <div className={`bar3 ${toggle && 'bar3on'}`}></div>
-      </div>
+      <ToggleButton {...toggleButtonProps} />
       <h1 className='header-brand_name'>Fantasy Spa</h1>
 
       {toggle && (
