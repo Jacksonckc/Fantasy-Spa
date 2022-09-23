@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Parisienne&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -29,7 +30,7 @@
   padding-top: calc(var(--navbar_height) + 20px);
 }
 .app .welcome {
-  background: url(../public/backgrond.webp);
+  background: url(../public/background.webp);
   background-position: center;
   background-size: cover;
   width: 100vw;
@@ -70,6 +71,7 @@
   width: 100%;
   text-align: center;
   font-size: var(--s1);
+  font-family: "Parisienne", cursive;
 }
 .app .home .home-buttons {
   padding-top: 40px;
@@ -112,6 +114,7 @@
 .app .home .home-buttons .round_button .round_button-caption {
   text-align: center;
   padding-bottom: 10px;
+  font-family: "Courier New", Courier, monospace;
 }
 .app .home .home-buttons .round_button .round_button-img {
   width: 35vw;
@@ -221,6 +224,8 @@
 }
 .app .header .header-brand_name {
   font-size: var(--s1);
+  font-family: "Dancing Script", serif;
+  font-weight: 700;
   background-image: linear-gradient(-225deg, #89cbff 0%, #846a50 15%, #89cbff 35%, #846a50 50%, #89cbff 65%, #846a50 80%, #89cbff 100%);
   background-size: 200%;
   color: black;
@@ -263,7 +268,7 @@
   transform: translate(-100vw, -100vh);
   -webkit-animation: dropDown 1s forwards ease-in-out;
           animation: dropDown 1s forwards ease-in-out;
-  box-shadow: 30px 70px 80px black;
+  box-shadow: 30px 70px 80px #030300;
   border-radius: 15px 60%;
   overflow: hidden;
 }
