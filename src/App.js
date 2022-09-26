@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Home, Contact, Profile, Blogs, Welcome } from './pages';
+import { Home, Contact, Profile, Blogs, Welcome, Facial } from './pages';
 import { Header } from './components';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -13,6 +13,9 @@ const App = () => {
         <Switch>
           <Route exact path='/'>
             <Home />
+          </Route>
+          <Route exact path='/Facial'>
+            <Facial />
           </Route>
           <Route exact path='/Profile'>
             <Profile />

@@ -43,7 +43,7 @@ const Profile = () => {
   };
 
   return (
-    <div id='profile'>
+    <div className='profile'>
       <input
         placeholder='Name: '
         onChange={(event) => {
