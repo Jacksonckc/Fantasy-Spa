@@ -1,7 +1,6 @@
 import { RoundButton } from '../particles';
 
-const generateButton = (buttonsInfo) => {
-  console.log('here');
+const generateHomeButton = (buttonsInfo) => {
   const buttons = [];
   buttonsInfo?.forEach((info) => {
     const props = {
@@ -15,4 +14,4 @@ const generateButton = (buttonsInfo) => {
   return buttons;
 };
 
-export default generateButton;
+export default generateHomeButton;

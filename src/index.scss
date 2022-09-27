@@ -10,7 +10,7 @@
 // Variables
 :root {
   --navbar_height: 10vh;
-  --ratio: 1.5;
+  --ratio: 1.25;
   --s-5: calc(var(--s-4) / var(--ratio));
   --s-4: calc(var(--s-3) / var(--ratio));
   --s-3: calc(var(--s-2) / var(--ratio));
@@ -31,8 +31,11 @@
 .app {
   & > * {
     height: 100vh;
-    // padding-top: calc(var(--navbar_height) + 20px);
-    padding-top: calc(var(--navbar_height) + 20px);
+    padding: calc(var(--navbar_height) + 20px) 20px 0 20px;
+    background-color: var(--background_color);
+    @media (min-width: 480px) {
+      padding: calc(var(--navbar_height) + 20px) 20% 0 20%;
+    }
   }
 
   .welcome {
@@ -59,14 +62,14 @@
 
   // Home component
   .home {
-    background-color: var(--background_color);
     position: relative;
     z-index: 0;
     .home-welcome {
       position: absolute;
       width: 100%;
+      left: 0;
       text-align: center;
-      font-size: var(--s1);
+      font-size: var(--s2);
       font-family: 'Parisienne', cursive;
     }
     .home-buttons {
@@ -99,10 +102,10 @@
           text-align: center;
           padding-bottom: 10px;
           font-family: 'Courier New', Courier, monospace;
+          font-size: var(--s1);
         }
         .round_button-img {
           width: 35vw;
-          // aspect-ratio: 1/1;
           max-width: 200px;
           min-width: 150px;
           border-radius: 50%;
@@ -113,6 +116,64 @@
             transform: scale(115%);
             box-shadow: none;
           }
+        }
+      }
+    }
+  }
+
+  // Facial Page
+  .facial {
+    position: relative;
+    h1 {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      text-align: center;
+      font-size: var(--s3);
+      font-family: 'Courier New', Courier, monospace;
+    }
+    .facial-rows {
+      padding-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-around;
+      max-width: 700px;
+      margin: auto;
+      height: 100%;
+      .facial-row-1 {
+        animation-delay: 0s;
+      }
+      .facial-row-2 {
+        animation-delay: 0.5s;
+      }
+      .facial-row-3 {
+        animation-delay: 1s;
+      }
+      & > * {
+        animation: shrinkIn 1s forwards;
+        transform: scale(1.5);
+        @keyframes shrinkIn {
+          to {
+            transform: scale(1);
+          }
+        }
+        display: flex;
+        justify-content: space-between;
+
+        .facial-row-desc {
+          font-size: var(--s-1);
+          font-family: 'Courier New', Courier, monospace;
+          padding: 40px 10px 0 10px;
+          text-align: center;
+          @media (min-width: 600px) {
+            font-size: var(--s0);
+            padding: 40px 30px 0 30px;
+          }
+        }
+        .round_button_to_cal-caption {
+          text-align: center;
+          font-family: 'Dancing Script', Courier, monospace;
         }
       }
     }
@@ -210,7 +271,6 @@
     }
     // h1 Header name
     .header-brand_name {
-      font-size: var(--s1);
       font-family: 'Dancing Script', serif;
       font-weight: 700;
       background-image: linear-gradient(
@@ -236,7 +296,7 @@
         }
       }
       @media (min-width: 480px) {
-        font-size: var(--s2);
+        font-size: var(--s3);
       }
     }
     // Menu list
@@ -253,7 +313,7 @@
       display: flex;
       flex-direction: column;
       text-align: center;
-      font-size: var(--s3);
+      font-size: var(--s5);
       justify-content: space-around;
       transform: translate(-100vw, -100vh);
       animation: dropDown 1s forwards ease-in-out;

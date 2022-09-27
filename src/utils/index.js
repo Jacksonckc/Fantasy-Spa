@@ -1,3 +1,3 @@
-import generateButton from './generateButton';
+import generateHomeButton from './generateHomeButton';
 
-export { generateButton };
+export { generateHomeButton };
