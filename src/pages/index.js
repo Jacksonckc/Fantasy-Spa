@@ -4,5 +4,7 @@ import Contact from './Contact';
 import Profile from './Profile';
 import Welcome from './Welcome';
 import Facial from './Facial';
+import Waxing from './Waxing';
+import Makeup from './Makeup';
 
-export { Home, Blogs, Contact, Profile, Welcome, Facial };
+export { Home, Blogs, Contact, Profile, Welcome, Facial, Waxing, Makeup };

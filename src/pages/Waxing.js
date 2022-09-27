@@ -1,39 +1,38 @@
 import { RoundButtonToCal } from '../particles';
-const Facial = () => {
+const Waxing = () => {
   return (
     <div className='service'>
-      <h1>Facials</h1>
+      <h1>Waxing Services</h1>
       <section className='service-rows'>
-        <section className='service-row1'>
+        <section className='service-row-1'>
           <p className='service-row-desc'>
-            Get rid of those pesky blackheads and white heads! Time to feel
-            smooth skin again!
+            Say goodbye to stubborn eyebrow hairs, and say hello to new
+            structured brows!
           </p>
           <RoundButtonToCal
-            path='facial.webp'
-            caption='Extractions $35'
+            path='eyebrow_wax.webp'
+            caption='Eyebrow Wax $20'
             route='https://calendly.com/jackson858216047/60min'
           />
         </section>
         <section className='service-row-2'>
           <RoundButtonToCal
-            path='refreshing_facial.webp'
-            caption='Refreshing Facial $30'
+            path='leg_wax.webp'
+            caption='Leg Wax $30'
             route='https://calendly.com/jackson858216047/60min'
           />
           <p className='service-row-desc'>
-            Give your skin the glow you desire! By removing the dead skin, your
-            face will be shinning in no time!
+            Get ready to have your legs silky smooth and hair free for 2 weeks!
           </p>
         </section>
         <section className='service-row-3'>
           <p className='service-row-desc'>
-            This Dermalogica facial is designed the slougth off dead skin and
-            leave your face smooth and clean.
+            Avoid the razor bumps and cuts on your underarms, and feel
+            confident!
           </p>
           <RoundButtonToCal
-            path='multivitamin_facial.webp'
-            caption='Multivitamin Facial $40'
+            path='underarm_wax.webp'
+            caption='Underarm Wax $15'
             route='https://calendly.com/jackson858216047/60min'
           />
         </section>
@@ -42,4 +41,4 @@ const Facial = () => {
   );
 };
 
-export default Facial;
+export default Waxing;

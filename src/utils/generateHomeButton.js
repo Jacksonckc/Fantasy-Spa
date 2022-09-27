@@ -1,4 +1,4 @@
-import { RoundButton } from '../particles';
+import { HomeRoundButton } from '../particles';
 
 const generateHomeButton = (buttonsInfo) => {
   const buttons = [];
@@ -9,7 +9,7 @@ const generateHomeButton = (buttonsInfo) => {
       route: info[2],
       key: info[3],
     };
-    buttons.push(<RoundButton {...props} />);
+    buttons.push(<HomeRoundButton {...props} />);
   });
   return buttons;
 };

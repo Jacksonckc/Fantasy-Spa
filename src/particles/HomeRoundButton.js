@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const RoundButton = (props) => {
+const HomeRoundButton = (props) => {
   const { path, caption, route } = props;
   return (
     <div className='round_button'>
@@ -13,4 +13,4 @@ const RoundButton = (props) => {
   );
 };
 
-export default RoundButton;
+export default HomeRoundButton;

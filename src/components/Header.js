@@ -17,6 +17,7 @@ const Header = () => {
   return (
     <nav className='header'>
       <ToggleButton {...toggleButtonProps} />
+
       <h1 className='header-brand_name'>Fantasy Spa</h1>
 
       {toggle && (

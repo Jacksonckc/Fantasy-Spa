@@ -1,6 +1,15 @@
 import React from 'react';
 
-import { Home, Contact, Profile, Blogs, Welcome, Facial } from './pages';
+import {
+  Home,
+  Contact,
+  Profile,
+  Blogs,
+  Welcome,
+  Facial,
+  Waxing,
+  Makeup,
+} from './pages';
 import { Header } from './components';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -16,6 +25,12 @@ const App = () => {
           </Route>
           <Route exact path='/Facial'>
             <Facial />
+          </Route>
+          <Route exact path='/Waxing'>
+            <Waxing />
+          </Route>
+          <Route exact path='/Makeup'>
+            <Makeup />
           </Route>
           <Route exact path='/Profile'>
             <Profile />
