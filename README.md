@@ -12,7 +12,17 @@ Clients can share their personal experiences with Perfectly Beautiful and even u
 
 # Web Pages
 
-{Describe each of the web pages you created and how the web app transitions between each of them. Also describe what is dynamically created on each page.}
+Home page has 3 options, each one represents one of the categories of the beauty services we provide.
+
+Each category has different beauty services the clients can choose from, when clicked on the service, it brings them to a scheduling page.
+
+Blogs page has posts from the store, other clients should be able to comment on them.
+
+Contact page has a way for the clients to contact the owner, it also has the owner information for the clients to follow up or contact directly.
+
+Profile page has user information once the user logs in. It has user basic info with pass appointments and future appointments with the owner.
+
+Beauty overflow is a channel for the clients to post their experiences and pictures to the app for other users to see.
 
 # Development Environment
 
@@ -21,18 +31,22 @@ React (Web App), Firebase cloud database
 
 Programming languages:
 This web application uses javascript which is the default langauge of React frontend framework.
+Sass will be the CSS framework.
 
 The web application will use backend/database supported by Firebase for authentication and handling queries.
 
 # Useful Websites
 
 - [React](https://reactjs.org/)
-- [Web Site Name](http://url.link.goes.here)
+- [Redux with React](https://www.youtube.com/watch?v=CVpUuw9XSjY)
+- [W3 Schools](https://www.w3schools.com/)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-
+- Beauty Overflow Page
 - Firebase authentication
 - Firebase cloud messaging
 - Online live chat
+- Admin Page
+- User Profile Perfection
+- Publish Page to Firebase
