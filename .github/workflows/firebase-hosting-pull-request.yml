@@ -13,5 +13,5 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PERFECTLY_BEAUTIFUL_T }}'
-          projectId: perfectly-beautiful-t
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FANTASY_SPA }}'
+          projectId: fantasy-spa
