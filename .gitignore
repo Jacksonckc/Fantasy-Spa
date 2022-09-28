@@ -26,6 +26,5 @@ yarn-error.log*
 firebase.js
 
 # scss
-scss
 index.css.map
 index.scss

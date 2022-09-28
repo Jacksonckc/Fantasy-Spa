@@ -1,9 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Parisienne&display=swap");
-.contact {
-  display: flex;
-  background-color: black;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -407,4 +402,51 @@
   .app .service .service-rows > * a img {
     width: 180px;
   }
+}
+.app .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+@media (min-width: 480px) {
+  .app .contact {
+    gap: 10%;
+    padding-bottom: 200px;
+    flex-direction: row;
+  }
+}
+.app .contact .contact-form {
+  display: flex;
+  flex-direction: column;
+}
+.app .contact .contact-form textarea {
+  height: 50px;
+}
+.app .contact .contact-form > * {
+  padding: 5px;
+  margin: 5px;
+}
+@media (min-width: 480px) {
+  .app .contact .contact-form > * {
+    padding: 10px;
+    margin: 15px;
+  }
+}
+.app .contact .contact-resource iframe {
+  aspect-ratio: 2/1;
+  max-height: 200px;
+}
+.app .contact .contact-resource .contact-resource-info {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+@media (min-width: 480px) {
+  .app .contact .contact-resource .contact-resource-info {
+    margin-bottom: 50px;
+  }
+}
+.app .contact .contact-resource .contact-resource-info > * {
+  padding: 5px;
 }/*# sourceMappingURL=index.css.map */
