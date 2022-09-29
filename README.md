@@ -3,8 +3,8 @@
 Description:
 This application will help clients to access our services and products.
 
-Why Perfectly Beautiful?
-Perfectly Beautiful is designed to better serve clients and users. The web app consists of our service menu, prices, reviews, and etc.
+Why Fantasy Spa?
+Fantasy Spa is designed to better serve clients and users. The web app consists of our service menu, prices, reviews, and etc.
 The application also provides the clients to make comments, review, and feedback for the improvement of our company.
 Clients can share their personal experiences with Perfectly Beautiful and even upload pictures on our 'Beauty overflow' channel with other app users.
 
@@ -49,4 +49,3 @@ The web application will use backend/database supported by Firebase for authenti
 - Online live chat
 - Admin Page
 - User Profile Perfection
-- Publish Page to Firebase
