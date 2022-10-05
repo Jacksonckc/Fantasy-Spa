@@ -6,5 +6,18 @@ import Welcome from './Welcome';
 import Facial from './Facial';
 import Waxing from './Waxing';
 import Makeup from './Makeup';
+import Authentication from './Authentication';
+import UpdateInfo from './UpdateInfo';
 
-export { Home, Blogs, Contact, Profile, Welcome, Facial, Waxing, Makeup };
+export {
+  Home,
+  Blogs,
+  Contact,
+  Profile,
+  Welcome,
+  Facial,
+  Waxing,
+  Makeup,
+  Authentication,
+  UpdateInfo,
+};
