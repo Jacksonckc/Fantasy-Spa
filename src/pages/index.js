@@ -7,7 +7,6 @@ import Facial from './Facial';
 import Waxing from './Waxing';
 import Makeup from './Makeup';
 import Authentication from './Authentication';
-import UpdateInfo from './UpdateInfo';
 
 export {
   Home,
@@ -19,5 +18,4 @@ export {
   Waxing,
   Makeup,
   Authentication,
-  UpdateInfo,
 };

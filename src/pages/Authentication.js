@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { firebaseAuth } from '../firebase';
 import {
   createUserWithEmailAndPassword,
@@ -6,12 +6,14 @@ import {
 } from 'firebase/auth';
 
 const Authentication = () => {
-  let registerEmail = '';
-  let registerPassword = '';
-  let loginEmail = '';
-  let loginPassword = '';
+  const [registerEmail, setRegisterEmail] = useState('');
+  const [registerPassword, setRegisterPassword] = useState('');
+  const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
+  const [haveAccount, setHaveAccount] = useState(true);
 
-  const register = async () => {
+  const register = async (event) => {
+    event.preventDefault();
     try {
       createUserWithEmailAndPassword(
         firebaseAuth,
@@ -20,11 +22,12 @@ const Authentication = () => {
       );
       console.log('Registration successful!');
     } catch (err) {
-      console.log(err.message);
+      alert(err.message);
     }
   };
 
-  const login = async () => {
+  const login = async (event) => {
+    event.preventDefault();
     try {
       signInWithEmailAndPassword(firebaseAuth, loginEmail, loginPassword);
       console.log('Login successful!');
@@ -34,35 +37,68 @@ const Authentication = () => {
   };
 
   return (
-    <div className='profile'>
-      <fieldset>
-        <h2>Register</h2>
-        <input
-          type='text'
-          placeholder='Email...'
-          onChange={(event) => (registerEmail = event.target.value)}
-        />
-        <input
-          type='text'
-          placeholder='Password...'
-          onChange={(event) => (registerPassword = event.target.value)}
-        />
-        <button onClick={register}>Register User</button>
-      </fieldset>
-      <fieldset>
-        <h2>Login</h2>
-        <input
-          type='text'
-          placeholder='Email...'
-          onChange={(event) => (loginEmail = event.target.value)}
-        />
-        <input
-          type='text'
-          placeholder='Password...'
-          onChange={(event) => (loginPassword = event.target.value)}
-        />
-        <button onClick={login}>Login User</button>
-      </fieldset>
+    <div className='authentication'>
+      <h2>Login before further actions</h2>
+      {haveAccount ? (
+        <div className='authentication-box'>
+          <form>
+            <fieldset>
+              <legend>Login</legend>
+              <input
+                type='email'
+                placeholder='Email...'
+                required
+                onChange={(event) => setLoginEmail(event.target.value)}
+              />
+              <input
+                type='password'
+                placeholder='Password...'
+                required
+                autoComplete='on'
+                onChange={(event) => setLoginPassword(event.target.value)}
+              />
+              <button onClick={(event) => login(event)}>Login User</button>
+            </fieldset>
+          </form>
+          <div className='authentication-box-bottom'>
+            <div>If you don't have an account yet...</div>
+
+            <button onClick={() => setHaveAccount(!haveAccount)}>
+              Go To Registration
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className='authentication-box'>
+          <form>
+            <fieldset>
+              <legend>Register</legend>
+              <input
+                type='email'
+                placeholder='Email...'
+                required
+                onChange={(event) => setRegisterEmail(event.target.value)}
+              />
+              <input
+                type='password'
+                placeholder='Password...'
+                required
+                autoComplete='on'
+                onChange={(event) => setRegisterPassword(event.target.value)}
+              />
+              <button onClick={(event) => register(event)}>
+                Register User
+              </button>
+            </fieldset>
+          </form>
+          <div className='authentication-box-bottom'>
+            <div>I already have an account</div>
+            <button onClick={() => setHaveAccount(!haveAccount)}>
+              Go To Login
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

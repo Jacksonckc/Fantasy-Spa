@@ -1,3 +1,4 @@
 import Header from './Header';
+import UpdateInfoBox from './UpdateInfoBox';
 
-export { Header };
+export { Header, UpdateInfoBox };

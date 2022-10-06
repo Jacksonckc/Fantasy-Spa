@@ -6,6 +6,13 @@
   box-sizing: border-box;
 }
 
+button {
+  transition: 0.1s;
+}
+button:hover {
+  transform: scale(1.1);
+}
+
 :root {
   --navbar_height: 10vh;
   --ratio: 1.25;
@@ -23,6 +30,9 @@
   --background_color: #ebecf8;
   --header_bar_color: #ffe5d8;
   --box_shadow_color: #e9b3a3;
+  --font-family-1: "Dancing Script", serif;
+  --font-family-2: "Parisienne", cursive;
+  --font-family-3: "Courier New", Courier, monospace;
 }
 
 .app > * {
@@ -161,7 +171,7 @@
   transform: translate(0, -11px) rotate(45deg);
 }
 .app .header .header-brand_name {
-  font-family: "Dancing Script", serif;
+  font-family: var(--font-family-1);
   font-weight: 700;
   background-image: linear-gradient(-225deg, #89cbff 0%, #846a50 15%, #89cbff 35%, #846a50 50%, #89cbff 65%, #846a50 80%, #89cbff 100%);
   background-size: 200%;
@@ -264,7 +274,7 @@
   left: 0;
   text-align: center;
   font-size: var(--s2);
-  font-family: "Parisienne", cursive;
+  font-family: var(--font-family-2);
 }
 .app .home .home-buttons {
   padding-top: 40px;
@@ -307,7 +317,7 @@
 .app .home .home-buttons .round_button .round_button-caption {
   text-align: center;
   padding-bottom: 10px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-family-3);
   font-size: var(--s1);
 }
 .app .home .home-buttons .round_button .round_button-img {
@@ -332,7 +342,7 @@
   left: 0;
   text-align: center;
   font-size: var(--s3);
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-family-3);
 }
 .app .service .service-rows {
   padding-top: 40px;
@@ -375,7 +385,7 @@
 }
 .app .service .service-rows > * .service-row-desc {
   font-size: var(--s-1);
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-family-3);
   padding: 40px 10px 0 10px;
   text-align: center;
 }
@@ -387,7 +397,7 @@
 }
 .app .service .service-rows > * .round_button_to_cal-caption {
   text-align: center;
-  font-family: "Dancing Script", Courier, monospace;
+  font-family: var(--font-family-1);
 }
 .app .service .service-rows > * a img {
   border-radius: 50%;
@@ -449,4 +459,157 @@
 }
 .app .contact .contact-resource .contact-resource-info > * {
   padding: 5px;
+}
+.app .authentication h2 {
+  text-align: center;
+  transform: translateY(20px);
+}
+.app .authentication .authentication-box {
+  background-color: var(--header_bar_color);
+  border: 10px dotted var(--box_shadow_color);
+  padding: var(--s-1);
+  max-width: 400px;
+  height: 300px;
+  margin: 10vh auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.app .authentication .authentication-box form fieldset {
+  padding: var(--s-1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.app .authentication .authentication-box form fieldset legend {
+  text-align: center;
+  font-size: var(--s2);
+  font-family: var(--font-family-3);
+}
+.app .authentication .authentication-box form fieldset input {
+  padding: 3px;
+}
+.app .authentication .authentication-box form fieldset button {
+  padding: 5px;
+  width: 120px;
+  margin: auto;
+  cursor: pointer;
+  font-family: var(--font-family-3);
+}
+.app .authentication .authentication-box .authentication-box-bottom div {
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: var(--font-family-3);
+}
+.app .authentication .authentication-box .authentication-box-bottom button {
+  cursor: pointer;
+  padding: 5px;
+  display: block;
+  margin: auto;
+  width: 170px;
+  font-family: var(--font-family-3);
+}
+.app .profile .profile-top {
+  background-color: var(--header_bar_color);
+  border: 10px dotted var(--box_shadow_color);
+  padding: var(--s-1);
+  max-width: 500px;
+  margin: 80px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.app .profile .profile-top .profile-top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+.app .profile .profile-top .profile-top-header .profile-top-user_email {
+  font-size: var(--s2);
+}
+.app .profile .profile-top .profile-top-header .profile_img {
+  width: var(--navbar_height);
+  padding: 10px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.app .profile .profile-top .profile-top-user_info {
+  padding: 10px;
+}
+.app .profile .profile-top .profile-top-user_info > * {
+  padding: 5px;
+  font-weight: bold;
+  font-size: var(--s1);
+  font-family: var(--font-family-3);
+}
+.app .profile .profile-top .profile-top-button_set {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.app .profile .profile-top .profile-top-button_set button {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--box_shadow_color);
+  border: 3px dotted var(--header_bar_color);
+}
+.app .update_info_box {
+  background-color: var(--header_bar_color);
+  border: 10px dotted var(--box_shadow_color);
+  padding: var(--s-1);
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  -webkit-animation: slideUp 1s forwards;
+          animation: slideUp 1s forwards;
+}
+@-webkit-keyframes slideUp {
+  to {
+    transform: translateY(-310px);
+  }
+}
+@keyframes slideUp {
+  to {
+    transform: translateY(-310px);
+  }
+}
+.app .update_info_box .update_info_box-close_btn {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  font-weight: bold;
+  font-size: var(--s2);
+  cursor: pointer;
+  width: 40px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--background_color);
+  border: 3px dotted var(--box_shadow_color);
+}
+.app .update_info_box .update_info_box-user_info {
+  margin-top: 10px;
+  padding: 10px;
+}
+.app .update_info_box .update_info_box-user_info > * {
+  padding: 5px;
+  font-weight: bold;
+  font-size: var(--s1);
+  font-family: var(--font-family-3);
+}
+.app .update_info_box .update_info_box-button_set {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.app .update_info_box .update_info_box-button_set button {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--box_shadow_color);
+  border: 3px dotted var(--header_bar_color);
 }/*# sourceMappingURL=index.css.map */
