@@ -19,7 +19,6 @@ const Header = () => {
       <ToggleButton {...toggleButtonProps} />
 
       <h1 className='header-brand_name'>Fantasy Spa</h1>
-
       {toggle && (
         <div className='header-ul'>
           <Link to='/' className='header-li' onClick={changeToggleState}>
