@@ -1,19 +1,49 @@
+import React, { useState } from 'react';
+import { collection, doc, setDoc, getDoc } from 'firebase/firestore';
+
+import { firestore } from '../firebase';
+
 const Contact = () => {
-  const handleSumbit = (event) => {
+  const contactCollectionRef = collection(firestore, 'contacts');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [request, setRequest] = useState('');
+
+  const handleSumbit = async (event) => {
     event.preventDefault();
-    console.log('Your form is submitted');
+    try {
+      const data = { name, request };
+      await setDoc(doc(contactCollectionRef, email), data);
+      console.log('Your form is submitted');
+    } catch (err) {
+      alert(err);
+    }
   };
   return (
     <div className='contact'>
       <form onSubmit={handleSumbit} className='contact-form'>
         <h2>Contact Us!</h2>
         <fieldset>
-          <label htmlFor='fname'>First name:</label>
-          <input type='text' id='fname' name='fname' placeholder='John' />
+          <label htmlFor='name'>Name: </label>
+          <input
+            type='text'
+            id='name'
+            name='name'
+            placeholder='John'
+            required
+            onChange={(event) => setName(event.target.value)}
+          />
         </fieldset>
         <fieldset>
-          <label htmlFor='lname'>Last name:</label>
-          <input type='text' id='lname' name='lname' placeholder='Doe' />
+          <label htmlFor='email'>Email: </label>
+          <input
+            type='email'
+            id='email'
+            name='email'
+            placeholder='email@com'
+            required
+            onChange={(event) => setEmail(event.target.value)}
+          />
         </fieldset>
         <fieldset>
           <textarea
@@ -21,10 +51,13 @@ const Contact = () => {
             id='request'
             name='request'
             placeholder='I would love to ask about ....'
+            required
+            onChange={(event) => setRequest(event.target.value)}
           />
         </fieldset>
         <input type='submit' value='Submit' />
       </form>
+
       <div className='contact-resource'>
         <div className='contact-resource-info'>
           <div>Phone: 1999041</div>
