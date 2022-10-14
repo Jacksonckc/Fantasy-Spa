@@ -24,6 +24,12 @@ Profile page has user information once the user logs in. It has user basic info 
 
 Beauty overflow is a channel for the clients to post their experiences and pictures to the app for other users to see.
 
+# Cloud Database
+
+Firebase is the backend and the database end for this project, this software allows the users to create an account in firebase and store profile information as well.
+
+The software can delete, insert, update and read data from firebase.
+
 # Development Environment
 
 Tools:
@@ -44,7 +50,6 @@ The web application will use backend/database supported by Firebase for authenti
 # Future Work
 
 - Beauty Overflow Page
-- Firebase authentication
 - Firebase cloud messaging
 - Online live chat
 - Admin Page

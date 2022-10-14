@@ -14,6 +14,9 @@ const Contact = () => {
     try {
       const data = { name, request };
       await setDoc(doc(contactCollectionRef, email), data);
+      setName('');
+      setEmail('');
+      setRequest('');
       console.log('Your form is submitted');
     } catch (err) {
       alert(err);
@@ -31,6 +34,7 @@ const Contact = () => {
             name='name'
             placeholder='John'
             required
+            value={name}
             onChange={(event) => setName(event.target.value)}
           />
         </fieldset>
@@ -42,6 +46,7 @@ const Contact = () => {
             name='email'
             placeholder='email@com'
             required
+            value={email}
             onChange={(event) => setEmail(event.target.value)}
           />
         </fieldset>
@@ -52,6 +57,7 @@ const Contact = () => {
             name='request'
             placeholder='I would love to ask about ....'
             required
+            value={request}
             onChange={(event) => setRequest(event.target.value)}
           />
         </fieldset>
