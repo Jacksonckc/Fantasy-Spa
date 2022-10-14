@@ -8,7 +8,7 @@ Fantasy Spa is designed to better serve clients and users. The web app consists 
 The application also provides the clients to make comments, review, and feedback for the improvement of our company.
 Clients can share their personal experiences with Perfectly Beautiful and even upload pictures on our 'Beauty overflow' channel with other app users.
 
-[Software Demo Video](https://www.loom.com/share/a3b0afe7a71c4e8b9a146464743212fb)
+[Software Demo Video](https://www.loom.com/share/a236e45962934817ae230ac0506c273a)
 
 # Web Pages
 
